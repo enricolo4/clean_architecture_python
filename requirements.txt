@@ -1,0 +1,5 @@
+falcon==2.0.0
+freeze==1.0.10
+gunicorn==19.9.0
+six==1.12.0
+ujson==1.35

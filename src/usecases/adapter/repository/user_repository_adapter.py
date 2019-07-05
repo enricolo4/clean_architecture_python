@@ -1,9 +1,11 @@
 from abc import ABC, abstractmethod
 
+from src.usecases.entity.user import UserEntity
+
 
 class UserRepositoryAdapter(ABC):
     @abstractmethod
-    def save(self):
+    def save(self, user_entity: UserEntity) -> UserEntity:
         pass
 
     @abstractmethod

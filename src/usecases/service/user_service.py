@@ -1,12 +1,13 @@
+from src.usecases.entity.user import UserEntity
 from src.usecases.adapter.repository.user_repository_adapter import UserRepositoryAdapter
 
 
-class UseService:
+class UserService:
     def __init__(self, user_repository_adapter: UserRepositoryAdapter):
         self.__user_repository_adapter = user_repository_adapter
 
-    def save(self):
-        return self.__user_repository_adapter.save()
+    def save(self, user_entity: UserEntity) -> UserEntity:
+        return self.__user_repository_adapter.save(user_entity)
 
     def update(self):
         return self.__user_repository_adapter.update()
