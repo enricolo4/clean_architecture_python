@@ -1,18 +1,22 @@
-class UseService:
-    def __init__(self):
-        pass
+from src.usecases.adapter.repository.user_repository_adapter import UserRepositoryAdapter
 
-    def add(self):
-        pass
+
+class UseService:
+    def __init__(self, user_repository_adapter: UserRepositoryAdapter):
+        self.__user_repository_adapter = user_repository_adapter
+
+    def save(self):
+        return self.__user_repository_adapter.save()
 
     def update(self):
-        pass
-
-    def find_by(self):
-        pass
-
-    def get_all(self):
-        pass
+        return self.__user_repository_adapter.update()
 
     def delete(self):
-        pass
+        return self.__user_repository_adapter.delete()
+
+    def find_by_id(self):
+        return self.__user_repository_adapter.find_by_id()
+
+    def get_all(self):
+        return self.__user_repository_adapter.get_all()
+
