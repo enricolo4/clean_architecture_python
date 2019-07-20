@@ -1,3 +1,6 @@
 __pycache__/
 .idea
 *.pyc/
+*.pyc
+*.pyo
+*.py[cod]

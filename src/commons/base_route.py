@@ -1,12 +1,9 @@
 from abc import ABC, abstractmethod
 
-from falcon import API
+from src.application.boot import Boot
 
 
 class BaseRoute(ABC):
-    def __init__(self, api: API):
-        self.routes(api)
-
-    @abstractmethod
-    def routes(self, api: API) -> API:
-        pass
+    @classmethod
+    def add_route(cls, uri_templates: str, resource: object, **kwargs):
+        Boot().api.add_route(uri_template=uri_templates, resource=resource, **kwargs)
