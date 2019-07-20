@@ -1,6 +1,5 @@
-from src.application import api
+from src.web.routes.user_routes import UserRoutes
 from src.web.routes.health_routes import HealthRoutes
 
-api = api()
-
-# HealthRoutes(api)
+UserRoutes()
+HealthRoutes()

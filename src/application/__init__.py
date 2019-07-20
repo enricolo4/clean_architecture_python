@@ -1,8 +1,6 @@
 from src.application.boot import Boot
-from src.web.routes.user_routes import UserRoutes
-from src.web.routes.health_routes import HealthRoutes
+from ..web.routes import *
 
-api = Boot().api
+boot = Boot()
 
-HealthRoutes()
-UserRoutes()
+
