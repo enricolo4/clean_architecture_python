@@ -9,3 +9,5 @@ class UserEntity:
     cpf: str
     email: str
     cellphone: str
+    id: int = None
+    available: bool = True
