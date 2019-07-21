@@ -1,7 +1,7 @@
-from sqlalchemy import Column, String, Integer
-
+from datetime import datetime
 from src.persistence.domain import BaseDomain
 from src.usecases.entity.user import UserEntity
+from sqlalchemy import Column, String, Integer, DateTime
 
 
 class UserDomain(BaseDomain):
@@ -9,6 +9,7 @@ class UserDomain(BaseDomain):
 
     name = Column(String(50), nullable=False, index=False)
     surname = Column(String(50), nullable=False, index=True)
+    birthday = Column(DateTime, nullable=False, index=True)
     cpf = Column(String(11), unique=True, nullable=False, index=True)
     age = Column(Integer, nullable=False, index=False)
     email = Column(String(50), unique=True, nullable=False, index=True)
@@ -20,6 +21,7 @@ class UserDomain(BaseDomain):
             id=self.id,
             name=self.name,
             surname=self.surname,
+            birthday=self.birthday,
             age=self.age,
             cpf=self.cpf,
             email=self.email,
@@ -30,6 +32,7 @@ class UserDomain(BaseDomain):
     FIELDS = {
         'name': str,
         'surname': str,
+        'birthday': datetime,
         'age': int,
         'cpf': str,
         'email': str,
@@ -44,6 +47,7 @@ def to_domain(user_entity: UserEntity) -> UserDomain:
         id=user_entity.id,
         name=user_entity.name,
         surname=user_entity.surname,
+        birthday=user_entity.birthday,
         cpf=user_entity.cpf,
         age=user_entity.age,
         email=user_entity.email,
