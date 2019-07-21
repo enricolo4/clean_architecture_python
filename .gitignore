@@ -1,3 +1,21 @@
-__pycache__/
+###########################
+# .gitignore for Jetbrains#
+###########################
+
+# User-specific stuff:
 .idea
-*.pyc/
+*.iml
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+#####################################
+# .gitignore for Python Environment #
+#####################################
+# venv
+.pytest_cache/
+__pycache__
+*.pyc
+*.pyo
+*.py[cod]
+*.egg-info

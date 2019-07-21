@@ -1,6 +1,6 @@
-import falcon
+from src.application.boot import Boot
+from ..web.routes import *
 
+boot = Boot()
 
-def api() -> falcon.API:
-    return falcon.API()
 
