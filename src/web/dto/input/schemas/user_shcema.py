@@ -7,7 +7,7 @@ user = {
         'birthday': {'$ref': '#/definitions/date-string-pattern'},
         'age': {'$ref': '#/definitions/non-negative-number'},
         'cpf': {'$ref': '#/definitions/cpf-string-pattern'},
-        'email': {'$red': '#/definitions/non-empty-string'},
+        'email': {'$red': '#/definitions/email-string-pattern'},
         'cellphone': {}
     },
     'definitions': {
@@ -19,6 +19,10 @@ user = {
             'type': 'string',
             'pattern': '^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\d{4}$'
         },
+        'email-string-pattern': {
+            'type': 'string',
+            'pattern': '(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
+        },
         'non-empty-string': {
             'type': 'string',
             'minLength': 1
@@ -27,6 +31,7 @@ user = {
             'type': 'integer',
             'minimum': 0,
         }
+
     },
     'required': ['name', 'surname', 'birthday', 'age', 'cpf', 'email', 'cellphone']
 }
