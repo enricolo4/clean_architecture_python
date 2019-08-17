@@ -19,3 +19,13 @@ __pycache__
 *.pyo
 *.py[cod]
 *.egg-info
+**/__pycache__/**
+venv/
+*/*.cpython-37.pyc
+venv/lib64
+venv/**
+.DS_Store
+src/.DS_Store
+
+
+
