@@ -39,3 +39,26 @@ No final, a configuração deve estar dessa forma:
 ![Screenshot](resources/gunicorn-pycharm-config.png)
 
 
+
+------
+
+### Arquitetura
+
+A aplicação foi desenvolvida usando os princípios de Clean Architecture de Robert Martin como pode ser visto no 
+site 
+
+http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+
+
+Esse estilo de arquitetura faz com os circulos mais internos que representam a camada de domínio da aplicação onde devem
+ficar de fato as regras de negócio da aplicação não consigam enxergar os mais externos que representam as camadas de 
+infraestrutura. 
+
+[<img src="http://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg">](http://google.com.au/)
+
+Seguindo esse princípio, é possivel obter uma arquitetura mais desacoplada e qualquer alteração nas camadas externas 
+não impactam as camadas mais internas onde ficam as regras de negócio o que é extremamente interessante para aplicações 
+com vida útil longa.
+
+------
+
