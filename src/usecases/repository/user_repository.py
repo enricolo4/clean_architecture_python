@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from src.usecases.entity.user import UserEntity
 
 
-class UserRepositoryAdapter(ABC):
+class UserRepository(ABC):
     @abstractmethod
     def save(self, user_entity: UserEntity) -> UserEntity:
         pass
@@ -23,4 +23,3 @@ class UserRepositoryAdapter(ABC):
     @abstractmethod
     def get_all(self):
         pass
-

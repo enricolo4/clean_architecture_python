@@ -1,8 +1,8 @@
-from src.usecases.adapter.repository.user_repository_adapter import UserRepositoryAdapter
 from src.usecases.entity.user import UserEntity
+from src.usecases.repository.user_repository import UserRepository
 
 
-class UserRepository(UserRepositoryAdapter):
+class UserRepositoryAdapter(UserRepository):
     def __init__(self):
         pass
 
