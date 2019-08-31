@@ -12,4 +12,4 @@ class BaseRoute(ABC):
 
     @property
     def services(self) -> UseCases:
-        return UseCases(adapters=Adapters())
+        return Boot().service

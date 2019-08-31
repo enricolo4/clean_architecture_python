@@ -1,11 +1,9 @@
 from dependency_injector import containers, providers
 
 from src.usecases.service.user_service import UserService
-from src.persistence.repository.user_repository import UserRepository
-
-
+from src.persistence.adapter.user_repository_adapter import UserRepositoryAdapter
 class Adapters(containers.DeclarativeContainer):
-    user_repository_adapter = providers.Singleton(UserRepository)
+    user_repository_adapter = providers.Singleton(UserRepositoryAdapter)
 
 
 class UseCases(containers.DeclarativeContainer):
@@ -13,5 +11,5 @@ class UseCases(containers.DeclarativeContainer):
 
     user_service = providers.Factory(
         UserService,
-        user_repository_adapter=adapters.founder_repository_adapter
+        user_repository=adapters.user_repository_adapter
     )

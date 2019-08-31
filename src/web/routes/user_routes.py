@@ -5,4 +5,4 @@ from src.web.controller.user_controller import UserController
 class UserRoutes(BaseRoute):
 
     def __init__(self):
-        self.add_route('/user', UserController(self.services.user_service))
+        self.add_route('/user', UserController(self.services.user_service()))
