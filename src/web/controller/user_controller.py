@@ -9,11 +9,6 @@ from src.usecases.service.user_service import UserService
 
 class UserController:
     def __init__(self, user_service: UserService):
-        if isinstance(user_service, UserService):
-            print('ok')
-        else:
-            print('negativo')
-            print(type(user_service))
         self.__user_service = user_service
 
     @jsonschema.validate(user)

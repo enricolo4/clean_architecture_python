@@ -17,10 +17,7 @@ class BaseDomain:
         return {'schema': ''}
 
     @property
-    def is_available(self) -> bool: return self.available
-
-    @property
-    def is_not_available(self) -> bool: return not self.is_available
+    def available(self) -> bool: return self.available    
 
     FIELDS = {
         'id': int,

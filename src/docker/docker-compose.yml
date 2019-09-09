@@ -1,0 +1,14 @@
+version: '3'
+volumes:
+  user-data:
+services:
+  db_user:
+    image: postgres
+    restart: always
+
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: user_db
+      POSTGRES_USER: user_user
+    ports:
+      - "5432:5432"
